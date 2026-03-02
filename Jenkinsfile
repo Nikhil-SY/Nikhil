@@ -13,7 +13,7 @@ pipeline{
                 }
         }
         stage('Parallel Job'){
-            steps{
+            parallel{
                 stage('Stage 1'){
                     steps{
                         sh 'pwd'
