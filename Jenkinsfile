@@ -13,22 +13,23 @@ pipeline{
                 }
         }
         stage('Parallel Job'){
-            stage('Stage 1'){
-                steps{
-                    sh 'pwd'
-                    }
+            steps{
+                stage('Stage 1'){
+                    steps{
+                        sh 'pwd'
+                        }
+                }
+                stage('Stage 2'){
+                    steps{
+                        sh '''
+                        whoami
+                        date
+                        ls
+                        echo "Team: ${Team}"
+                        '''
+                        }
+                }
             }
-            stage('Stage 2'){
-                steps{
-                    sh '''
-                    whoami
-                    date
-                    ls
-                    echo "Team: ${Team}"
-                    '''
-                    }
-            }
-        
     }
          stage('Stage 3'){
                 steps{
