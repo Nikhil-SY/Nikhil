@@ -4,7 +4,7 @@ pipeline{
         booleanParam(name:"Devops", description:"Check if you are from devops team")
     }
     environment{
-        Team: "DevOps"
+        Team="DevOps"
     }
     stages{
         stage('Pre-stage'){
