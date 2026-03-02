@@ -7,11 +7,12 @@ pipeline{
         Team="DevOps"
     }
     stages{
-        catchError(buildResult: "Success", stageResult: "Failed"){
         stage('Pre-stage'){
             steps{
+                catchError(buildResult: "Success", stageResult: "Failed"){
                 sh 'exit 1'
                 }
+            
         }
         }
         stage('Parallel Job'){
