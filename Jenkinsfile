@@ -29,6 +29,7 @@ pipeline{
                 stage('Stage 2'){
                     steps{
                         sh '''
+                        #!/bin/bash
                         whoami
                         date
                         ls
