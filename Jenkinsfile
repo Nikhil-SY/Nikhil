@@ -19,7 +19,7 @@ pipeline{
         stage('Parallel Job'){
             parallel{
                 when{
-                    expression { params.Environment == "Dev" }
+                    expression { params.Environment == "Prod" }
                 }
                 stage('Stage 1'){
                     steps{
