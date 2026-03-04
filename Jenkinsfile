@@ -28,14 +28,14 @@ pipeline{
                 }
                 stage('Stage 2'){
                     steps{
-                        sh '''
+                        sh """
                         #!/bin/bash
                         whoami
                         date
                         ls
                         echo "Team: ${Team}"
                         echo "Choice parameter: ${params.Environment}"
-                        '''
+                        """
                         }
                 }
             }
