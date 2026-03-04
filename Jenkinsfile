@@ -2,9 +2,10 @@ pipeline{
     agent any
     parameters{
         booleanParam(name:"Devops", description:"Check if you are from devops team")
+        choice(name:"Environment",choices:["Dev","QA","Prod"], description:"Select the environment")
     }
     environment{
-        Team="DevOps"
+        Team = "DevOps"
     }
     stages{
         stage('Pre-stage'){
