@@ -2,7 +2,7 @@ pipeline{
     agent any
     parameters{
         booleanParam(name:"Devops", description:"Check if you are from devops team")
-        choice(name:"Environment",choices:["Dev","QA","Prod"], description:"Select the environment", defaultValue:"Prod")
+        choice(name:"Environment",choices:["Dev","QA","Prod"], description:"Select the environment")
     }
     environment{
         Team = "DevOps"
@@ -20,7 +20,7 @@ pipeline{
             parallel{
                 stage('Stage 1'){
                     when{
-                    expression { params.Environment == "Prod" }
+                    expression { params.Environment == "Dev" }
                 }
                     steps{
                         sh 'pwd'
