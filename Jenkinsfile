@@ -34,7 +34,7 @@ pipeline{
                         date
                         ls
                         echo "Team: ${Team}"
-                        // echo "Choice parameter: ${params.Environment}"
+                        echo "Choice parameter: ${params.Environment}"
                         '''
                         }
                 }
