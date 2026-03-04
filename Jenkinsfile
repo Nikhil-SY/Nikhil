@@ -18,10 +18,10 @@ pipeline{
         }
         stage('Parallel Job'){
             parallel{
-                when{
+                stage('Stage 1'){
+                    when{
                     expression { params.Environment == "Prod" }
                 }
-                stage('Stage 1'){
                     steps{
                         sh 'pwd'
                         }
