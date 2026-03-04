@@ -18,6 +18,9 @@ pipeline{
         }
         stage('Parallel Job'){
             parallel{
+                when{
+                    expression { params.Environment == "Dev" }
+                }
                 stage('Stage 1'){
                     steps{
                         sh 'pwd'
