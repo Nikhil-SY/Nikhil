@@ -2,7 +2,7 @@ pipeline{
     agent any
     parameters{
         booleanParam(name:"Devops", description:"Check if you are from devops team")
-        choice(name:"Environment",choices:["Dev","QA","Prod"], description:"Select the environment")
+        choice(name:"Environment",choices:["Dev","QA","Prod"], description:"Select the environment", defaultValue:"Prod")
     }
     environment{
         Team = "DevOps"
@@ -33,7 +33,7 @@ pipeline{
                         date
                         ls
                         echo "Team: ${Team}"
-                        echo "Choice parameter: ${params.Environment}"
+                        // echo "Choice parameter: ${params.Environment}"
                         '''
                         }
                 }
